@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-@extends('class::App\Cidades')
+
 @section('title', 'AdminLTE')
 
 @section('content_header')
@@ -36,12 +36,8 @@
               <input type="text" class="form-control" name="cidade"/>
           </div>
           <div class="form-group">
-              <label for="idestados">estados:</label>
-              
-
-
-           {!! Form::select('cidades', App\Cidades::all(), App\Cidades::find('1'))!!}
-          
+          {!! Form::select('cidades', App\cidades::all(),'null')!!}
+           
           </div>
           <button type="submit" class="btn btn-primary">Add</button>
       </form>
