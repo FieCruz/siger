@@ -82,6 +82,7 @@ class CidadesController extends Controller
     public function edit($id)
     {
         $cidades = Cidades::find($id);
+       
 
         return view('cidades.edit', compact('cidades'));
     }
@@ -102,7 +103,7 @@ class CidadesController extends Controller
 
         $cidades = Cidades::find($id);
         $cidades->cidade = $request->get('cidade');
-        $cidades->idestado = $request->get('idestados');
+        $cidades->idestados = $request->get('idestados');
         $cidades->save();
         return redirect('/cidades')->with('success', 'Cidade alterada com sucesso');
     }
