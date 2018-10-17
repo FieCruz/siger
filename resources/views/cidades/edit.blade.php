@@ -44,7 +44,7 @@
                 'estado',
                 $estados->pluck('nomeuf','id'),
                 old('estados') ?? $estadosSelecionado,
-                ['class' => 'form-control'],[ 'value' =>idestados]
+                ['class' => 'form-control', 'value'=>idestados]
             )
         !!}
         
