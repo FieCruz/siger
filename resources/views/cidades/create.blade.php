@@ -36,8 +36,15 @@
               <input type="text" class="form-control" name="cidade"/>
           </div>
           <div class="form-group">
-          {!! Form::select('cidades', App\cidades::all(),'null')!!}
-           
+          {!!
+            Form::select(
+                'estado',
+                $estados->pluck('nomeuf','id'),
+                old('estado') ?? $estadoSelecionado,
+                ['class' => 'form-control']
+            )
+        !!}
+
           </div>
           <button type="submit" class="btn btn-primary">Add</button>
       </form>

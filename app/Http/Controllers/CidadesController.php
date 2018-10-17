@@ -2,8 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Cidades;
+use App\Http\Requests\ValidateCidade;
 use Illuminate\Http\Request;
+use App\Estados;
 
+/**
+ * Class CidadesController
+ * @package App\Http\Controllers
+ */
 class CidadesController extends Controller
 {
     /**
@@ -22,9 +29,13 @@ class CidadesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    { 
-        
-        return view('cidades.create');
+    {
+
+        $estados =  Estados::all();
+
+        return view('cidades.create')
+        ->withEstadoSelecionado($estados->where('nomeuf','São Paulo')->first()->id ?? null)
+        ->withEstados($estados);
     }
 
     /**
@@ -35,7 +46,18 @@ class CidadesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'cidade'    => 'required|min:3',
+            'estado'    => 'required'
+        ]);
+
+        Cidades::create([
+                'cidade'    => $request->get('cidade'),
+                'idestados' => $request->get('estado')
+            ]
+        );
+
+        return redirect()->route('cidades.index');
     }
 
     /**
