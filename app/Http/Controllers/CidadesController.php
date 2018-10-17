@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Estados;
 
 class CidadesController extends Controller
 {
@@ -22,9 +23,13 @@ class CidadesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    { 
-        
-        return view('cidades.create');
+    {
+
+        $estados =  Estados::all();
+
+        return view('cidades.create')
+        ->withEstadoSelecionado($estados->where('nomeuf','São Paulo')->first()->id ?? null)
+        ->withEstados($estados);
     }
 
     /**
