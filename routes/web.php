@@ -14,9 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('/estados', 'EstadosController');
+Route::resource('/cidades', 'CidadesController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/estados', 'EstadosController');
-Route::resource('/cidades', 'CidadesController');

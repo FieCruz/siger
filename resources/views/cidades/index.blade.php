@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'SIGER -Sistema Gerenciador de Reservas')
 
 @section('content_header')
     <h1>Dashboard</h1>
@@ -23,10 +23,9 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>ID</td>
+          <td>Código da cidade</td>
           <td>Cidade</td>
-          <td>Codigo do Estado</td>
-         
+          <td>Codigo do Estado</td>         
           <td colspan="2">Ações</td>
         </tr>
     </thead>
@@ -36,6 +35,9 @@
             <td>{{$cidades->id}}</td>
             <td>{{$cidades->cidade}}</td>
             <td>{{$cidades->idestados}}</td>
+           
+         
+           
          <td><a href="{{ route('cidades.edit',$cidades->id)}}" class="btn btn-primary">Editar</a></td>
             <td>
                 <form action="{{ route('cidades.destroy', $cidades->id)}}" method="post">

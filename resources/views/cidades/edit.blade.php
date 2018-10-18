@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'SIGER -Sistema Gerenciador de Reservas')
 
 @section('content_header')
     <h1>Dashboard</h1>
@@ -17,7 +17,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Edit Share
+  
   </div>
   <div class="card-body">
     @if ($errors->any())

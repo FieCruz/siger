@@ -21,6 +21,7 @@ class CidadesController extends Controller
     public function index()
     {
         $cidades = Cidades::all();
+        
 
         return view('cidades.index', compact('cidades'));
     }
@@ -82,7 +83,7 @@ class CidadesController extends Controller
     public function edit($id)
     {
         $cidades = Cidades::find($id);
-       
+        $estados=Estados::find($id);
 
         return view('cidades.edit', compact('cidades'));
     }
