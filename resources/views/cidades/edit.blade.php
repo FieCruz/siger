@@ -29,12 +29,12 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('cidades.update', $cidades->id) }}">
+      <form method="post" action="{{ route('cidades.update', $cidade->id) }}">
         @method('PATCH')
         @csrf
         <div class="form-group">
           <label for="cidade">Cidade:</label>
-          <input type="text" class="form-control" name="cidade" value={{ $cidades->cidade }} />
+          <input type="text" class="form-control" name="cidade" value={{ $cidade->cidade }} />
         </div>
         <div class="form-group">
           <label for="estados">Estados :</label>
@@ -43,8 +43,8 @@
             Form::select(
                 'estado',
                 $estados->pluck('nomeuf','id'),
-                old('estados') ?? $estadosSelecionado,
-                ['class' => 'form-control', 'value'=>idestados]
+                old('estados') ?? $cidade->estado->id,
+                ['class' => 'form-control']
             )
         !!}
         
@@ -52,9 +52,5 @@
       </form>
   </div>
 </div>
-
-
-
-
 
 @stop
