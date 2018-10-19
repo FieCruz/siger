@@ -20,7 +20,10 @@ class CidadesController extends Controller
      */
     public function index()
     {
-        //
+        $cidades = Cidades::all();
+        
+
+        return view('cidades.index', compact('cidades'));
     }
 
     /**
@@ -47,7 +50,7 @@ class CidadesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'cidade'    => 'required|min:3',
+            'cidade'    => 'required',
             'estado'    => 'required'
         ]);
 
@@ -56,8 +59,8 @@ class CidadesController extends Controller
                 'idestados' => $request->get('estado')
             ]
         );
-
-        return redirect()->route('cidades.index');
+        
+        return redirect()->route('cidades.index')->with('success', 'Cidade adicionado com sucesso');
     }
 
     /**
@@ -79,7 +82,10 @@ class CidadesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cidades = Cidades::find($id);
+        $estados=Estados::find($id);
+
+        return view('cidades.edit', compact('cidades'));
     }
 
     /**
@@ -91,8 +97,18 @@ class CidadesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'cidade'    => 'required',
+            'estado'    => 'required'
+        ]);
+
+        $cidades = Cidades::find($id);
+        $cidades->cidade = $request->get('cidade');
+        $cidades->idestados = $request->get('idestados');
+        $cidades->save();
+        return redirect('/cidades')->with('success', 'Cidade alterada com sucesso');
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -102,6 +118,9 @@ class CidadesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cidades = Cidades::find($id);
+        $cidades->delete();
+
+     return redirect('/cidades')->with('success', 'Cidade excluida com sucesso');
     }
 }

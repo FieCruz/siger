@@ -24,10 +24,10 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>ID</td>
-          <td>Nome da UF</td>
-          <td>UF</td>
-                <td colspan="2">Ações</td>
+          <td><b>Código do estado:</b></td>
+          <td><b>Nome da UF:</b></td>
+          <td><b>UF:</b></td>
+                <td colspan="2"><b>Ações</b></td>
         </tr>
     </thead>
     <tbody>

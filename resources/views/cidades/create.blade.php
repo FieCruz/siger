@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'SIGER -Sistema Gerenciador de Reservas')
 
 @section('content_header')
     <h1>Dashboard</h1>
@@ -32,10 +32,11 @@
       <form method="post" action="{{ route('cidades.store') }}">
           <div class="form-group">
               @csrf
-              <label for="cidade">cidade:</label>
+              <label for="cidade">Cidade:</label>
               <input type="text" class="form-control" name="cidade"/>
           </div>
           <div class="form-group">
+           <label for="estado">Estado:</label>
           {!!
             Form::select(
                 'estado',
@@ -46,7 +47,7 @@
         !!}
 
           </div>
-          <button type="submit" class="btn btn-primary">Add</button>
+          <button type="submit" class="btn btn-primary">Incluir</button>
       </form>
   </div>
 </div>
