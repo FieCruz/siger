@@ -80,12 +80,11 @@ class CidadesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Cidades $cidade)
     {
-        $cidades = Cidades::find($id);
-        $estados=Estados::find($id);
+        $estados=Estados::all();
 
-        return view('cidades.edit', compact('cidades'));
+        return view('cidades.edit', compact('cidade', 'estados'));
     }
 
     /**
@@ -95,17 +94,16 @@ class CidadesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Cidades $cidade)
     {
         $request->validate([
             'cidade'    => 'required',
             'estado'    => 'required'
         ]);
 
-        $cidades = Cidades::find($id);
-        $cidades->cidade = $request->get('cidade');
-        $cidades->idestados = $request->get('idestados');
-        $cidades->save();
+        $cidade->cidade = $request->get('cidade');
+        $cidade->idestados = $request->get('idestados');
+        $cidade->save();
         return redirect('/cidades')->with('success', 'Cidade alterada com sucesso');
     }
     
@@ -116,10 +114,9 @@ class CidadesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Cidades $cidade)
     {
-        $cidades = Cidades::find($id);
-        $cidades->delete();
+        $cidade->delete();
 
      return redirect('/cidades')->with('success', 'Cidade excluida com sucesso');
     }
