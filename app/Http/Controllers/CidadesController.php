@@ -102,7 +102,7 @@ class CidadesController extends Controller
         ]);
 
         $cidade->cidade = $request->get('cidade');
-        $cidade->idestados = $request->get('idestados');
+        $cidade->idestados = $request->get('estado');
         $cidade->save();
         return redirect('/cidades')->with('success', 'Cidade alterada com sucesso');
     }
