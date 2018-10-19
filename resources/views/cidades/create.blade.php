@@ -41,7 +41,7 @@
             Form::select(
                 'estado',
                 $estados->pluck('nomeuf','id'),
-                old('estado') ?? $estadoSelecionado,
+                old('estado') ?? request()->get('estado'),
                 ['class' => 'form-control']
             )
         !!}
