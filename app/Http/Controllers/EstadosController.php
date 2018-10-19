@@ -38,14 +38,14 @@ class EstadosController extends Controller
      */
     public function store(Request $request)
     {
-      $request->validate([
+        $request->validate([
             'nomeuf'=>'required|unique:estados',
             'uf'=> 'required|unique:estados',
             
-        ]    
+        ]
    
         
-    );
+        );
           $estados = new Estados([
             'nomeuf' => $request->get('nomeuf'),
             'uf'=> $request->get('uf'),
@@ -88,7 +88,7 @@ class EstadosController extends Controller
      */
     public function update(Request $request, $id)
     {
-     $request->validate([
+        $request->validate([
             'nomeuf'=>'required',
             'uf'=> 'required',
            
