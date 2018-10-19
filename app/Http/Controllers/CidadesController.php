@@ -37,7 +37,7 @@ class CidadesController extends Controller
         $estados =  Estados::all();
 
         return view('cidades.create')
-        ->withEstadoSelecionado($estados->where('nomeuf','São Paulo')->first()->id ?? null)
+        ->withEstadoSelecionado($estados->where('nomeuf', 'São Paulo')->first()->id ?? null)
         ->withEstados($estados);
     }
 
@@ -118,6 +118,6 @@ class CidadesController extends Controller
     {
         $cidade->delete();
 
-     return redirect('/cidades')->with('success', 'Cidade excluida com sucesso');
+        return redirect('/cidades')->with('success', 'Cidade excluida com sucesso');
     }
 }
