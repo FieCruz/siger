@@ -41,7 +41,7 @@ class CampusController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_cidade'       => 'required',
+            'cidade'       => 'required',
             'idestado'        => 'required',
 	        'endereco'        => 'required|unique:campus',
 	        'telefone'        => 'required|unique:campus',
@@ -52,8 +52,8 @@ class CampusController extends Controller
         ]);
 
         Campus::create([
-                'id_cidade'          =>$request->get('cidade'),
-                'idestado'           =>$request->get('estado'),
+                'cidade'             =>$request->get('cidades'),
+                'estado'             =>$request->get('estados'),
 		        'endereco'           =>$request->get('campus'),
 		        'telefone'           =>$request->get('campus'),
 		        'descdocampus'       =>$request->get('campus'),
