@@ -58,7 +58,7 @@
   <div class="form-group">
            <label for="cidade">Cidade:</label>
           {!!
-              Form::select(
+            Form::select(
                 'cidade',
                 $cidades->pluck('cidade','id'),
                 old('cidade') ?? request()->get('cidade'),
