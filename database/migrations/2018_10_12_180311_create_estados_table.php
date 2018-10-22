@@ -18,6 +18,7 @@ class CreateEstadosTable extends Migration
             $table->string('uf', 3)->unique();
             $table->string('nomeuf')->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

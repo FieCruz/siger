@@ -143,6 +143,22 @@ return [
                 ],
                 
         ],
+        [
+            'text'    => 'Campus',
+            'icon'    => 'file',
+            'submenu' => [
+                [
+                    'text' => 'Campus cadastrados',
+                    'url'  => 'campus',
+                ],
+                [
+                    'text' => 'Cadastrar campus',
+                    'url'  => 'campus/create',
+                ],
+               
+                ],
+                
+        ],
 
 
 

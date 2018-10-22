@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 Route::resource('/estados', 'EstadosController');
 Route::resource('/cidades', 'CidadesController');
+Route::resource('/campus', 'CampusController');
 
 Auth::routes();
 

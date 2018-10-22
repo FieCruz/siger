@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Cidades;
 
 class Cidades extends Model
 {
@@ -16,5 +17,9 @@ class Cidades extends Model
     {
         return $this->hasOne('App\Estados', 'id', 'idestados');
     }
+
+  
+
+  
 }
 

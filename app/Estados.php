@@ -11,4 +11,8 @@ class Estados extends Model
         'nomeuf',
     ];
     protected $table ='estados';
+
+
+
+    
 }
