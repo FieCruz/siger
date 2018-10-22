@@ -8,7 +8,7 @@ class Campus extends Model
 {
     protected $fillable = [
         'cidade',
-        'estados',
+        'estado',
 	    'endereco',
 	    'telefone',
 	    'descdocampus',

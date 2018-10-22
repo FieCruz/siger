@@ -53,9 +53,9 @@ class CampusController extends Controller
         ]);
 
         Campus::create([
-                'cidade'             =>$request->get('cidade'),
-                'estado'             =>$request->get('estado'),
-		        'endereco'           =>$request->get('campus'),
+                'estado'             =>$request->get('estados'),
+                'cidade'             =>$request->get('cidades'),
+                'endereco'           =>$request->get('campus'),
 		        'telefone'           =>$request->get('campus'),
 		        'descdocampus'       =>$request->get('campus'),
             
