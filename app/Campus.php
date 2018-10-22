@@ -18,12 +18,12 @@ class Campus extends Model
 
     public function estado()
     {
-        return $this->hasOne('App\Estados', 'id', 'idestados');
+        return $this->hasOne('App\Estados', 'id', 'estados');
     }
 
     public function cidade()
     {
-        return $this->hasOne('App\Cidades', 'id', 'id_cidade');
+        return $this->hasOne('App\Cidades', 'id', 'cidade');
     }
 
    

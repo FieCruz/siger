@@ -26,10 +26,11 @@ class CampusController extends Controller
     public function create()
     {
         $estados =  Estados::all();
-        $cidades=   Cidades::all();
+        $cidades =  Cidades::all();
 
         return view('campus.create')
-        ->withEstados($estados)->withCidades($cidades);
+                ->withEstados($estados)
+                ->withCidades($cidades);
     }
 
     /**
@@ -41,8 +42,8 @@ class CampusController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'cidade'       => 'required',
-            'idestado'        => 'required',
+            'cidade'          => 'required',
+            'estado'          => 'required',
 	        'endereco'        => 'required|unique:campus',
 	        'telefone'        => 'required|unique:campus',
 	        'descdocampus'    => 'required|unique:campus',
@@ -52,8 +53,8 @@ class CampusController extends Controller
         ]);
 
         Campus::create([
-                'cidade'             =>$request->get('cidades'),
-                'estado'             =>$request->get('estados'),
+                'cidade'             =>$request->get('cidade'),
+                'estado'             =>$request->get('estado'),
 		        'endereco'           =>$request->get('campus'),
 		        'telefone'           =>$request->get('campus'),
 		        'descdocampus'       =>$request->get('campus'),

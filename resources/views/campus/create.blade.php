@@ -36,14 +36,14 @@
               <input type="text" class="form-control" name="descdocampus"/>
           </div>
           <div class="form-group">
-			<label for="endereco">Endereço do Campus:</label>
+		      	<label for="endereco">Endereço do Campus:</label>
         		<input type="text" class="form-control" name="endereco"/>
-	</div>
-  	<div class="form-group">
-			<label for="telefone">Telefone do Campus:</label>
-        		<input type="text" class="form-control" name="telefone"/>
-	 </div>
- 	<div class="form-group">
+        	</div>
+  	      <div class="form-group">
+			        <label for="telefone">Telefone do Campus:</label>
+        	    <input type="text" class="form-control" name="telefone"/>
+	        </div>
+ 	  <div class="form-group">
         <label for="estado">Estado:</label>
           {!!
             Form::select(
@@ -52,9 +52,9 @@
                 old('estado') ?? request()->get('estado'),
                 ['class' => 'form-control']
             )
-        !!}
+          !!}
 
- </div>
+    </div>
   <div class="form-group">
            <label for="cidade">Cidade:</label>
           {!!

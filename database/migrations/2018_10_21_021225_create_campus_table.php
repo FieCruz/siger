@@ -16,13 +16,13 @@ class CreateCampusTable extends Migration
         Schema::create('campus', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('descdocampus')->unique();
-            $table->string('endereco')->unique();
-            $table->string('telefone')->unique();
-            $table->integer('cidade')->unsigned();
-            $table->foreign('cidade')->references('id')->on('cidades');
-            $table->integer('estado')->unsigned();
-            $table->foreign('estado')->references('id')->on('estados');
+            $table->string('descdocampus') ->unique();
+            $table->string('endereco')     ->unique();
+            $table->string('telefone')     ->unique();
+            $table->integer('cidade')      ->unsigned();
+            $table->foreign('cidade')      ->references('id')->on('cidades');
+            $table->integer('estado')      ->unsigned();
+            $table->foreign('estado')      ->references('id')->on('estados');
             $table->softDeletes();
 
         });
