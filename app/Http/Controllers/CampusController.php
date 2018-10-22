@@ -43,8 +43,7 @@ class CampusController extends Controller
     {
         $request->validate([
             'cidade'          => 'required',
-            'estado'          => 'required',
-	        'endereco'        => 'required|unique:campus',
+        	'endereco'        => 'required|unique:campus',
 	        'telefone'        => 'required|unique:campus',
 	        'descdocampus'    => 'required|unique:campus',
 		
@@ -53,7 +52,6 @@ class CampusController extends Controller
         ]);
 
         Campus::create([
-                'estado'             =>$request->get('estados'),
                 'cidade'             =>$request->get('cidades'),
                 'endereco'           =>$request->get('campus'),
 		        'telefone'           =>$request->get('campus'),

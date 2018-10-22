@@ -43,18 +43,8 @@
 			        <label for="telefone">Telefone do Campus:</label>
         	    <input type="text" class="form-control" name="telefone"/>
 	        </div>
- 	  <div class="form-group">
-        <label for="estado">Estado:</label>
-          {!!
-            Form::select(
-                'estado',
-                $estados->pluck('nomeuf','id'),
-                old('estado') ?? request()->get('estado'),
-                ['class' => 'form-control']
-            )
-          !!}
-
-        </div>
+ 	  
+        
   <div class="form-group">
            <label for="cidade">Cidade:</label>
           {!!

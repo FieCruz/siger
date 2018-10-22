@@ -19,8 +19,6 @@ class CreateCampusTable extends Migration
             $table->string('descdocampus') ->unique();
             $table->string('endereco')     ->unique();
             $table->string('telefone')     ->unique();
-            $table->integer('estado')      ->unsigned();
-            $table->foreign('estado')      ->references('id')->on('estados');
             $table->integer('cidade')      ->unsigned();
             $table->foreign('cidade')      ->references('id')->on('cidades');
             $table->softDeletes();
