@@ -44,22 +44,25 @@
               <input type="text" class="form-control" name="telefone"/>
           </div>
           <div class="form-group">
-             <label for="cidade">Cidade :</label>
-	 {!!
-            Form::select(
-                'cidade',
-                $cidades->pluck('cidade','id'),
-                old('cidade') ?? request()->get('cidade'),
-                ['class' => 'form-control']
-            )
-        !!} 
-
+             <label for="cidade">Estado :</label>
+         {!!
+                Form::select(
+                    'estado',
+                    $estados->pluck('nomeuf','id'),
+                    old('estado') ?? request()->get('estado'),
+                    ['class' => 'form-control', 'placeholder' => 'Selecione']
+                )
+            !!}
+          </div>
+          <div class="form-group">
+              <label for="cidade">Cidade :</label>
+              <select name="cidade" id="cidade" class="form-control">
+                  <option value="">Selecione um Estado</option>
+              </select>
           </div>
 
           <button type="submit" class="btn btn-primary">incluir</button>
       </form>
   </div>
 </div>
-
-
 @stop

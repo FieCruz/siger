@@ -44,7 +44,7 @@
             <td>{{$campus->descricao}}</td>
             <td>{{$campus->endereco}}</td>
             <td>{{$campus->telefone}}</td>
-            <td>{{$campus->cidade}}</td>
+            <td>{{ $campus->city->cidade }}</td>
             <td><a href="{{ route('campus.edit',$campus->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
                 <form action="{{ route('campus.destroy', $campus->id)}}" method="post">

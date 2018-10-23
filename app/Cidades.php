@@ -17,9 +17,5 @@ class Cidades extends Model
     {
         return $this->hasOne('App\Estados', 'id', 'idestados');
     }
-
-  
-
-  
 }
 
