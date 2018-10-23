@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'yellow',
+    'skin' => 'blue',
 
     /*
     |--------------------------------------------------------------------------
@@ -166,7 +166,7 @@ return [
 
 
 
-        'LABELS',
+        /*'LABELS',
         [
             'text'       => 'Important',
             'icon_color' => 'red',
@@ -178,7 +178,7 @@ return [
         [
             'text'       => 'Information',
             'icon_color' => 'aqua',
-        ],
+        ], */
     ],
 
     /*

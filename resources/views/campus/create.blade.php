@@ -17,7 +17,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-
+  
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -32,35 +32,34 @@
       <form method="post" action="{{ route('campus.store') }}">
           <div class="form-group">
               @csrf
-              <label for="descdocampus">Descrição do Campus:</label>
-              <input type="text" class="form-control" name="descdocampus"/>
+              <label for="descricao">Descrição do Campus:</label>
+              <input type="text" class="form-control" name="descricao"/>
           </div>
           <div class="form-group">
-		      	<label for="endereco">Endereço do Campus:</label>
-        		<input type="text" class="form-control" name="endereco"/>
-        	</div>
-  	      <div class="form-group">
-			        <label for="telefone">Telefone do Campus:</label>
-        	    <input type="text" class="form-control" name="telefone"/>
-	        </div>
- 	  
-        
-  <div class="form-group">
-           <label for="cidade">Cidade:</label>
-          {!!
+              <label for="endereco">Endereço do Campus :</label>
+              <input type="text" class="form-control" name="endereco"/>
+          </div>
+          <div class="form-group">
+              <label for="telefone">Telefone do Campus:</label>
+              <input type="text" class="form-control" name="telefone"/>
+          </div>
+          <div class="form-group">
+             <label for="cidade">Cidade :</label>
+	 {!!
             Form::select(
                 'cidade',
                 $cidades->pluck('cidade','id'),
                 old('cidade') ?? request()->get('cidade'),
                 ['class' => 'form-control']
             )
-        !!}
+        !!} 
 
           </div>
 
-          <button type="submit" class="btn btn-primary">Incluir</button>
+          <button type="submit" class="btn btn-primary">incluir</button>
       </form>
   </div>
 </div>
+
 
 @stop

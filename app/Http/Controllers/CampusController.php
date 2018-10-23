@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cidades;
-use App\Estados;
 use App\Campus;
 class CampusController extends Controller
 {
@@ -15,7 +14,8 @@ class CampusController extends Controller
      */
     public function index()
     {
-        //
+        $campus = Campus::all();
+        return view('campus.index', compact('campus'));
     }
 
     /**
@@ -24,13 +24,8 @@ class CampusController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        $estados =  Estados::all();
-        $cidades =  Cidades::all();
-
-        return view('campus.create')
-                ->withEstados($estados)
-                ->withCidades($cidades);
+    {   $cidades =  Cidades::all();
+        return view('campus.create')->withCidades($cidades);
     }
 
     /**
@@ -42,24 +37,22 @@ class CampusController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'cidade'          => 'required',
-        	'endereco'        => 'required|unique:campus',
-	        'telefone'        => 'required|unique:campus',
-	        'descdocampus'    => 'required|unique:campus',
-		
-     
-
-        ]);
-
-        Campus::create([
-                'cidade'             =>$request->get('cidades'),
-                'endereco'           =>$request->get('campus'),
-		        'telefone'           =>$request->get('campus'),
-		        'descdocampus'       =>$request->get('campus'),
+            'descricao'	=> 'required',
+            'endereco'	=> 'required',
+            'telefone'	=> 'required|numeric',
+            'cidade'	=> 'required|integer',
+          ]);
+          
+      Campus::create([
+            'descricao'	=>$request->get('descricao'),
+            'endereco' 	=> $request->get('endereco'),
+            'telefone' 	=> $request->get('telefone'),
+            'cidade'    => $request->get('cidade'),
+                    
+                ]
+            );
             
-        ]);
-        
-        return redirect()->route('campus.index')->with('success', 'Campus adicionado com sucesso');
+            return redirect()->route('campus.index')->with('success', 'Campus adicionado com sucesso');
     }
 
     /**
@@ -107,4 +100,3 @@ class CampusController extends Controller
         //
     }
 }
-

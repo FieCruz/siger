@@ -7,24 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 class Campus extends Model
 {
     protected $fillable = [
+        'descricao',
+        'endereco',
+        'telefone',
         'cidade',
-        'estado',
-	    'endereco',
-	    'telefone',
-	    'descdocampus',
+      ];
 
-    ];
-    protected $table ='campus';
+      protected $table ='campus';
 
-    public function estado()
-    {
-        return $this->hasOne('App\Estados', 'id', 'estados');
-    }
 
-    public function cidade()
+      public function campus()
     {
         return $this->hasOne('App\Cidades', 'id', 'cidade');
     }
 
-   
+
+
+
 }

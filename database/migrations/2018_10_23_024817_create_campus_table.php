@@ -15,14 +15,12 @@ class CreateCampusTable extends Migration
     {
         Schema::create('campus', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('descricao');
+            $table->string('endereco');
+            $table->string('telefone');
+            $table->integer('cidade')->unsigned();
+            $table->foreign('cidade')->references('id')->on('cidades');
             $table->timestamps();
-            $table->string('descdocampus') ->unique();
-            $table->string('endereco')     ->unique();
-            $table->string('telefone')     ->unique();
-            $table->integer('cidade')      ->unsigned();
-            $table->foreign('cidade')      ->references('id')->on('cidades');
-            $table->softDeletes();
-
         });
     }
 
@@ -33,6 +31,6 @@ class CreateCampusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('campuses');
+        Schema::dropIfExists('campus');
     }
 }
