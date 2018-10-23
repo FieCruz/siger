@@ -33,7 +33,7 @@
           <td>Descrição do Campus:</td>
           <td>Endereço do Campus:</td>
           <td>Telefone do Campus:</td>
-	  <td>Cidade/Estado:</td>
+	        <td>Cidade:</td>
           <td colspan="2">Ações</td>
         </tr>
     </thead>
@@ -45,12 +45,12 @@
             <td>{{$campus->endereco}}</td>
             <td>{{$campus->telefone}}</td>
             <td>{{ $campus->city->cidade }}</td>
-            <td><a href="{{ route('campus.edit',$campus->id)}}" class="btn btn-primary">Edit</a></td>
+            <td><a href="{{ route('campus.edit',$campus->id)}}" class="btn btn-primary">Editar</a></td>
             <td>
                 <form action="{{ route('campus.destroy', $campus->id)}}" method="post">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Delete</button>
+                  <button class="btn btn-danger" type="submit">Excluir</button>
                 </form>
             </td>
         </tr>

@@ -75,9 +75,12 @@ class CampusController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
+        $campus = Campus::find($id);
+        $cidades= Cidades::find($id);
+        $estados= Estados::all();
 
+        return view('campus.edit', compact('campus','cidade','estados'));
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -87,7 +90,21 @@ class CampusController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'descricao'	=> 'required',
+            'endereco'	=> 'required',
+            'telefone'	=> 'required|numeric',
+            'cidade'	=> 'required|integer',
+      ]);
+
+      $campus = Campus::find($id);
+      $campus->descricao    =  $request->get('descricao');
+      $campus->endereco     =  $request->get('endereco');
+      $campus->telefone     =  $request->get('telefone');
+      $campus->cidade       =  $request->get('cidade');
+      $campus->save();
+
+      return redirect('/campus')->with('success', 'Dados do campus atualizado com sucesso');
     }
 
     /**
@@ -97,7 +114,9 @@ class CampusController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {   
+        $campus = Campus::find($id);
+        $campus->delete();
+        return redirect('/campus')->with('success', 'Dados do Campus excluido com sucesso');
     }
 }
