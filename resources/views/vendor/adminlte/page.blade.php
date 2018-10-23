@@ -13,6 +13,7 @@
     'top-nav' => 'layout-top-nav'
 ][config('adminlte.layout')] : '') . (config('adminlte.collapse_sidebar') ? ' sidebar-collapse ' : ''))
 
+
 @section('body')
     <div class="wrapper">
 
@@ -132,6 +133,7 @@
 
 @section('adminlte_js')
     <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
     @stack('js')
     @yield('js')
 @stop

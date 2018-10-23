@@ -105,7 +105,6 @@ class CidadesController extends Controller
         $cidade->save();
         return redirect('/cidades')->with('success', 'Cidade alterada com sucesso');
     }
-    
 
     /**
      * Remove the specified resource from storage.
@@ -118,5 +117,16 @@ class CidadesController extends Controller
         $cidade->delete();
 
         return redirect('/cidades')->with('success', 'Cidade excluida com sucesso');
+    }
+
+    /**
+     * @param Estados $estado
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function porestado(Estados $estado){
+        return response()->json(
+            $estado->cidades()->orderBy('cidade')->get(),
+            200
+        );
     }
 }

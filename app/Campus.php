@@ -12,16 +12,11 @@ class Campus extends Model
         'telefone',
         'cidade',
       ];
-
       protected $table ='campus';
 
-
-      public function campus()
+      public function city()
     {
         return $this->hasOne('App\Cidades', 'id', 'cidade');
     }
-
-
-
 
 }

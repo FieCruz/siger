@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Estados;
 use Illuminate\Http\Request;
 use App\Cidades;
 use App\Campus;
@@ -24,8 +25,8 @@ class CampusController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   $cidades =  Cidades::all();
-        return view('campus.create')->withCidades($cidades);
+    {   $estados =  Estados::all();
+        return view('campus.create')->withEstados($estados);
     }
 
     /**
