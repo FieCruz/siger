@@ -16,9 +16,8 @@ Route::get('/', function () {
 });
 Route::resource('/estados', 'EstadosController');
 Route::resource('/cidades', 'CidadesController');
-Route::resource('/campus', 'CampusController');
 Route::get('/cidades/uf/{estado}', 'CidadesController@porestado');
-
+Route::resource('/campus', 'CampusController');
+Route::resource('/equipamentos', 'EquipamentosController');
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
