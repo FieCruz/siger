@@ -61,7 +61,7 @@
               </select>
           </div>
 
-          <button type="submit" class="btn btn-primary">incluir</button>
+          <button type="submit" class="btn btn-primary">Incluir</button>
       </form>
   </div>
 </div>

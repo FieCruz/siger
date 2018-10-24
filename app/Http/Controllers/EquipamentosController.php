@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Campus;
+use App\Equipamentos;
 
 class EquipamentosController extends Controller
 {
@@ -23,7 +25,10 @@ class EquipamentosController extends Controller
      */
     public function create()
     {
-        //
+        $campus =  Campus::all();
+
+        return view('equipamentos.create')
+        ->withCampus($campus);
     }
 
     /**
@@ -34,7 +39,27 @@ class EquipamentosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'eqdescricao'   	=> 'required',
+          'marca'           	=> 'required',
+              'codidentificacao'  	=> 'required',
+          'dt_aquisicao'       	=> 'required|date',
+          'fkcampus'		=> 'required|integer', 
+                  
+              ]
+         
+              
+              );
+                $equipamentos = new Equipamentos([
+                  'eqdescricao' 	=> $request->get('eqdescricao'),
+                  'marca'       	=> $request->get('marca'),
+                  'codidentificacao'  => $request->get ('codidentificacao'), 
+                  'dt_aquisicao'	=> $request->get ('dt_aquisicao'), 
+                  'fkcampus'		=> $request->get ('fkcampus'),
+                 
+                ]);
+                $equipamentos->save();
+                return redirect('/equipamentos')->with('success', 'Equipamento incluido com sucesso');
     }
 
     /**
