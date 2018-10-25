@@ -15,11 +15,13 @@ class Equipamentos extends Model
     ];
     protected $table ='equipamentos';
 
-    public function equipamentos()
+    
+
+    public function campus()
     {
         return $this->hasOne('App\Campus', 'id', 'fkcampus');
-
     }
+
 
 
 

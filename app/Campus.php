@@ -19,4 +19,7 @@ class Campus extends Model
         return $this->hasOne('App\Cidades', 'id', 'cidade');
     }
 
+    
+    
+
 }

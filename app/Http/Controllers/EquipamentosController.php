@@ -15,7 +15,8 @@ class EquipamentosController extends Controller
      */
     public function index()
     {
-        //
+        $equipamentos = Equipamentos::all();
+        return view('equipamentos.index', compact('equipamentos'));
     }
 
     /**
@@ -40,22 +41,22 @@ class EquipamentosController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'eqdescricao'   	=> 'required',
-          'marca'           	=> 'required',
-              'codidentificacao'  	=> 'required',
-          'dt_aquisicao'       	=> 'required|date',
-          'fkcampus'		=> 'required|integer', 
+             'eqdescricao'   	    => 'required',
+             'marca'             	=> 'required',
+             'codidentificacao'  	=> 'required|unique:equipamentos',
+             'dt_aquisicao'       	=> 'required|date',
+             'fkcampus'		        => 'required|integer', 
                   
               ]
          
               
               );
                 $equipamentos = new Equipamentos([
-                  'eqdescricao' 	=> $request->get('eqdescricao'),
-                  'marca'       	=> $request->get('marca'),
+                  'eqdescricao' 	  => $request->get('eqdescricao'),
+                  'marca'       	  => $request->get('marca'),
                   'codidentificacao'  => $request->get ('codidentificacao'), 
-                  'dt_aquisicao'	=> $request->get ('dt_aquisicao'), 
-                  'fkcampus'		=> $request->get ('fkcampus'),
+                  'dt_aquisicao'	  => $request->get ('dt_aquisicao'), 
+                  'fkcampus'		  => $request->get ('fkcampus'),
                  
                 ]);
                 $equipamentos->save();
