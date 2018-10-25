@@ -159,6 +159,22 @@ return [
                 ],
                 
         ],
+        [
+            'text'    => 'Equipamentos',
+            'icon'    => 'file',
+            'submenu' => [
+                [
+                    'text' => 'Equipamentos cadastrados',
+                    'url'  => 'campus',
+                ],
+                [
+                    'text' => 'Cadastrar equipamentos',
+                    'url'  => 'equipamentos/create',
+                ],
+               
+                ],
+                
+        ],
 
 
 

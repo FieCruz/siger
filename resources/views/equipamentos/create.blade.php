@@ -33,7 +33,7 @@
           <div class="form-group">
               @csrf
               <label for="eqdescricao">Descrição do equipamento:</label>
-              <input type="text" class="form-control" name="eqdescricaocaralho"/>
+              <input type="text" class="form-control" name="eqdescricao"/>
           </div>
 	  <div class="form-group">
  		<label for="marca">Marca do equipamento:</label>
