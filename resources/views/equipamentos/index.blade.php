@@ -42,7 +42,7 @@
             <td>{{$equipamentos->marca}}</td>
             <td>{{$equipamentos->codidentificacao}}</td>
             <td>{{$equipamentos->dt_aquisicao}}</td>
-            <td>{{$equipamentos->fkcampus->descricao}} </td>
+            <td>{{$equipamentos->campus->descricao}} </td>
             
 		
             
