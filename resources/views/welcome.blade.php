@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Siger
+                    <img src="siger.png">
                 </div>
 
                 

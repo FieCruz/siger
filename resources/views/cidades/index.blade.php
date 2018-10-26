@@ -23,10 +23,10 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>Código da cidade</td>
-          <td>Cidade / Estado</td>
-          <td>Codigo do Estado</td>         
-          <td colspan="2">Ações</td>
+          <td><b>Código da cidade:<b></td>
+          <td><b>Cidade / Estado<b></td>
+              
+          <td colspan="2"><b>Ações</b></td>
         </tr>
     </thead>
     <tbody>
@@ -34,7 +34,7 @@
         <tr>
             <td>{{$cidades->id}}</td>
             <td>{{$cidades->cidade}} - {{ $cidades->estado->uf }}</td>
-            <td>{{$cidades->idestados}}</td>
+           
          <td><a href="{{ route('cidades.edit',$cidades->id)}}" class="btn btn-primary">Editar</a></td>
             <td>
                 <form action="{{ route('cidades.destroy', $cidades->id)}}" method="post">

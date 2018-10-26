@@ -23,15 +23,15 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>Código do equipamento</td>
-          <td>Descrição:</td>
-          <td>Marca:</td>
-          <td>Numero de série:</td>    
-          <td>Data de aquisição:</td>
-          <td>Campus de Origem:</td>
+          <td><b>Código do equipamento:</b></td>
+          <td><b>Descrição:</b></td>
+          <td><b>Marca:</b></td>
+          <td><b>Numero de série:</b></td>    
+          <td><b>Data de aquisição:</b></td>
+          <td><b>Campus de Origem:</b></td>
 	       
 	   
-          <td colspan="2">Ações</td>
+          <td colspan="2"><b>Ações</b></td>
         </tr>
     </thead>
     <tbody>

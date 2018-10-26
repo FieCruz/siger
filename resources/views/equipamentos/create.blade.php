@@ -40,7 +40,7 @@
         	<input type="text" class="form-control" name="marca"/>
 	  </div>
 	 <div class="form-group">
- 		<label for="codidentificacao">Código de identificação do equipamento:</label>
+ 		<label for="codidentificacao">Número de série do equipamento:</label>
         	<input type="text" class="form-control" name="codidentificacao"/>
 	  </div>
 		 <div class="form-group">

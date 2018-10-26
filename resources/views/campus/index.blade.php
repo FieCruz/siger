@@ -29,12 +29,13 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>ID</td>
-          <td>Descrição do Campus:</td>
-          <td>Endereço do Campus:</td>
-          <td>Telefone do Campus:</td>
-	        <td>Cidade:</td>
-          <td colspan="2">Ações</td>
+          <td><b>Código do campus:</b></td>
+          <td><b>Descrição do Campus:</b></td>
+          <td><b>Endereço do Campus:</b></td>
+          <td><b>Telefone do Campus:</b></td>
+          
+	        <td><b>Cidade:</td>
+          <td colspan="2"><b>Ações</b></td>
         </tr>
     </thead>
     <tbody>

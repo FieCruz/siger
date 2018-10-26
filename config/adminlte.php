@@ -165,7 +165,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Equipamentos cadastrados',
-                    'url'  => 'campus',
+                    'url'  => 'equipamentos',
                 ],
                 [
                     'text' => 'Cadastrar equipamentos',
