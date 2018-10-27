@@ -14,10 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
 Route::resource('/estados', 'EstadosController');
 Route::resource('/cidades', 'CidadesController');
 Route::get('/cidades/uf/{estado}', 'CidadesController@porestado');
 Route::resource('/campus', 'CampusController');
 Route::resource('/equipamentos', 'EquipamentosController');
-Auth::routes();
+Route::resource('/manutencao', 'ManutencaoController');
+Route::resource('/reserva', 'ReservaController');
 Route::get('/home', 'HomeController@index')->name('home');
