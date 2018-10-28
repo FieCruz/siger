@@ -30,9 +30,14 @@
       </div><br />
     @endif
       <form method="post" action="{{ route('reservas.store') }}">
+         
+         <div class="form-group">
+         <label for="solicitante">Solicitante: </label> 
+              <input type="text" class="form-control" name="solicitante" value="{{auth()->user()->name}}" readonly >
+         </div>
           <div class="form-group">
               @csrf
-              <label for="solicitante">Solicitante: </label> <label name="solicitante"> {{auth()->User()->name}}</label><br/>
+             
               <label for="dtagendamento">Data de agendamento:</label>
               {!!
 				Form::date('dtagendamento', \Carbon\Carbon::now(),['class' => 'form-control']);
@@ -45,7 +50,7 @@
            {!!
             Form::select(
                 'fkequipamentos',
-                $equipamentos->pluck('eqdescricao','marca','id'),
+                $equipamentos->pluck('eqdescricao','id'),
                 old('fkequipamentos') ?? request()->get('fkequipamentos'),
                 ['class' => 'form-control']
             )

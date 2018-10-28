@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Equipamentos;
+use App\Reservas;
 
 class ReservasController extends Controller
 {
@@ -37,7 +38,18 @@ class ReservasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'solicitante'=>'required',
+            'dtagendamento'=> 'required|date',
+            'fkequipamentos' => 'required|integer'
+          ]);
+          $reservas = new Reservas([
+            'solicitante' => $request->get('solicitante'),
+            'dtagendamento'=> $request->get('dtagendamento'),
+            'fkequipamentos'=> $request->get('fkequipamentos')
+          ]);
+          $reservas->save();
+          return redirect('/reservas')->with('success', 'Reserva realizada com sucesso.');
     }
 
     /**

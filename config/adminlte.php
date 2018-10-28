@@ -175,6 +175,23 @@ return [
                 ],
                 
         ],
+        [
+            'text'    => 'Reservas',
+            'icon'    => 'file',
+            'submenu' => [
+                [
+                    'text' => 'Reservas Realizadas',
+                    'url'  => 'reservas',
+                ],
+                [
+                    'text' => 'Reservar equipamentos',
+                    'url'  => 'reservas/create',
+                ],
+               
+                ],
+                
+        ],
+
 
 
 
