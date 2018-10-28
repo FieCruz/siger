@@ -20,8 +20,7 @@ class CreateReservasTable extends Migration
             $table->foreign('fkequipamentos')->references('id')->on('equipamentos');
             $table->srtring('solicitante');
             $table->date('dtagendamento');
-            $table->date('dtentrega');
-            $table->string('obs');
+          
         });
     }
 

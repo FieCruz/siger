@@ -32,11 +32,11 @@
       <form method="post" action="{{ route('equipamentos.store') }}">
           <div class="form-group">
               @csrf
-              <label for="eqdescricao">Descrição do equipamento:</label>
+              <label for="eqdescricao">Descrição/Marca do equipamento:</label>
               <input type="text" class="form-control" name="eqdescricao"/>
           </div>
 	  <div class="form-group">
- 		<label for="marca">Marca do equipamento:</label>
+ 		<label for="marca">Modelo do equipamento:</label>
         	<input type="text" class="form-control" name="marca"/>
 	  </div>
 	 <div class="form-group">
@@ -61,6 +61,7 @@
                 ['class' => 'form-control']
             )
         !!}
+
 
           </div>
           <button type="submit" class="btn btn-primary">Incluir</button>

@@ -21,5 +21,5 @@ Route::get('/cidades/uf/{estado}', 'CidadesController@porestado');
 Route::resource('/campus', 'CampusController');
 Route::resource('/equipamentos', 'EquipamentosController');
 Route::resource('/manutencao', 'ManutencaoController');
-Route::resource('/reserva', 'ReservaController');
+Route::resource('/reservas', 'ReservasController');
 Route::get('/home', 'HomeController@index')->name('home');

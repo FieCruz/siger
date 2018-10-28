@@ -57,7 +57,7 @@
           <div class="form-group">
               <label for="cidade">Cidade :</label>
               <select name="cidade" id="cidade" class="form-control">
-                  <option value="">Selecione um Estado</option>
+                  <option value="">Selecione uma cidade</option>
               </select>
           </div>
 

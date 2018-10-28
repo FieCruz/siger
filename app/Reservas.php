@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Equipamentos;
+use App\Reservas;
 
 class Reservas extends Model
 {
@@ -11,8 +12,7 @@ class Reservas extends Model
         'fkequipamentos',
         'solicitante',
         'dtagendamento',
-        'dtentrega',
-        'obs',
+       
 
     ];
     /**
