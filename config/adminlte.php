@@ -155,6 +155,14 @@ return [
                     'text' => 'Cadastrar campus',
                     'url'  => 'campus/create',
                 ],
+                [
+                    'text' => 'Registro de Horários',
+                    'url'  => 'horarios/create',
+                ],
+                [
+                    'text' => 'Horarios de funcionamento',
+                    'url'  => 'horarios',
+                ],
                
                 ],
                 

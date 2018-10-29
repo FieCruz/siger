@@ -36,12 +36,12 @@
         @method('PATCH')
         @csrf
         <div class="form-group">
-          <label for="nomeuf">Nome da UF:</label>
-          <input type="text" class="form-control" name="nomeuf" value={{ $estados->nomeuf }} />
+          <label for="horarios"><b>Horarios:</b></label>
+          <input type="text" class="form-control" name="nomeuf" value={{ $horarios->horario }} />
         </div>
         <div class="form-group">
-          <label for="uf">UF:</label>
-          <input type="text" class="form-control" name="uf" value={{ $estados->uf }} />
+          <label for="turno">Turno:</label>
+          <input type="text" class="form-control" name="uf" value={{ $horarios->turno }} />
         </div>
         
         <button type="submit" class="btn btn-primary">Atualizar</button>

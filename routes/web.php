@@ -22,4 +22,5 @@ Route::resource('/campus', 'CampusController');
 Route::resource('/equipamentos', 'EquipamentosController');
 Route::resource('/manutencao', 'ManutencaoController');
 Route::resource('/reservas', 'ReservasController');
+Route::resource('/horarios', 'HorariosController');
 Route::get('/home', 'HomeController@index')->name('home');
