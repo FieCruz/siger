@@ -32,7 +32,7 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('horarios.update', $horarios->id) }}">
+      <form method="post" action="{{ route('estados.update', $estados->id) }}">
         @method('PATCH')
         @csrf
         <div class="form-group">
