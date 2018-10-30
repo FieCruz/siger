@@ -37,7 +37,7 @@
         @foreach($reservas as $reservas)
         <tr>
             
-	        <td>{{$reservas->solicitante}}</td>
+	         <td>{{$reservas->solicitante}}</td>
             <td>{{$reservas->horario}}</td>
             <td>{{$reservas->dtagendamento}}</td>
             <td>{{$reservas->equipamentos->eqdescricao}} </td>
@@ -50,7 +50,7 @@
                 <form action="{{ route('reservas.destroy', $reservas->id)}}" method="post">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Excluir</button>
+                  <button class="btn btn-danger" type="submit">Cancelar</button>
                 </form>
             </td>
         </tr>

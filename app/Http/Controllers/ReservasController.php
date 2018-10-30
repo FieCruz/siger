@@ -74,12 +74,13 @@ class ReservasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   $equipamentos= Equipamentos::all();
+        $reservas = Reservas::find($id);
+        return view('reservas.edit', compact('reservas','equipamentos'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified esource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -87,7 +88,25 @@ class ReservasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'solicitante'       =>'required',
+            'horario'           =>'required',
+            'dtagendamento'     => 'required|date',
+            'fkequipamentos'    => 'required|integer'
+                 
+             ]
+        
+             
+             );
+                $reservas = Reservas::find($id);
+                $reservas->solicitante        = $request->get('solicitante');
+                $reservas->horario     	      = $request->get('horario');
+                $reservas->dtagendamento      = $request->get ('dtagendamento'); 
+                $reservas->fkequipamentos	  = $request->get ('fkequipamentos'); 
+                
+              
+               $reservas->save();
+               return redirect('/reservas')->with('success', 'Reserva atualizada com sucesso');
     }
 
     /**
@@ -98,6 +117,10 @@ class ReservasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $reservas = Reservas::find($id);
+        $reservas->delete();
+   
+        return redirect('/reservas')->with('success', 'Reserva cancelada com sucesso');
     }
+    
 }
