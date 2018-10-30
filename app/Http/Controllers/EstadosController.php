@@ -52,7 +52,7 @@ class EstadosController extends Controller
            
           ]);
           $estados->save();
-          return redirect('/estados')->with('success', 'Estado incluido com sucesso');
+          return redirect('/estados')->with('success', 'Dado incluido com sucesso');
     }
 
     /**

@@ -32,11 +32,11 @@
         @method('PATCH')
         @csrf
         <div class="form-group">
-          <label for="eqdescricao">Descrição do equipamento:</label>
+          <label for="eqdescricao">Descrição/Marca do equipamento:</label>
           <input type="text" class="form-control" name="eqdescricao" value={{ $equipamentos->eqdescricao }} />
         </div>
         <div class="form-group">
-          <label for="marca">Marca do equipamento:</label>
+          <label for="marca">Modelo do equipamento:</label>
           <input type="text" class="form-control" name="marca" value={{ $equipamentos->marca }} />
         </div>
         <div class="form-group">

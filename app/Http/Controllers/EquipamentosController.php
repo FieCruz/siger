@@ -115,7 +115,7 @@ class EquipamentosController extends Controller
                 
               
                $equipamentos->save();
-               return redirect('/equipamentos')->with('success', 'Equipamento Atualizaso com sucesso');
+               return redirect('/equipamentos')->with('success', 'Equipamento Atualizado com sucesso');
     }
 
     /**
