@@ -89,7 +89,7 @@ class ReservasController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'solicitante'       =>'required',
+         //   'solicitante'       =>'required',
             'horario'           =>'required',
             'dtagendamento'     => 'required|date',
             'fkequipamentos'    => 'required|integer'
@@ -99,7 +99,7 @@ class ReservasController extends Controller
              
              );
                 $reservas = Reservas::find($id);
-                $reservas->solicitante        = $request->get('solicitante');
+               // $reservas->solicitante        = $request->get('solicitante');
                 $reservas->horario     	      = $request->get('horario');
                 $reservas->dtagendamento      = $request->get ('dtagendamento'); 
                 $reservas->fkequipamentos	  = $request->get ('fkequipamentos'); 
