@@ -7,8 +7,7 @@
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
-   <hr>
+   
 <style>
   .uper {
     margin-top: 40px;
@@ -23,7 +22,7 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td><b>Código da cidade:<b></td>
+         
           <td><b>Cidade / Estado<b></td>
               
           <td colspan="2"><b>Ações</b></td>
@@ -32,7 +31,7 @@
     <tbody>
         @foreach($cidades as $cidades)
         <tr>
-            <td>{{$cidades->id}}</td>
+            
             <td>{{$cidades->cidade}} - {{ $cidades->estado->uf }}</td>
            
          <td><a href="{{ route('cidades.edit',$cidades->id)}}" class="btn btn-primary">Editar</a></td>

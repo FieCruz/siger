@@ -12,6 +12,7 @@ class Reservas extends Model
         'fkequipamentos',
         'solicitante',
         'dtagendamento',
+        'horario'
        
 
     ];

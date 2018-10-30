@@ -7,11 +7,8 @@
 @stop
 
 @section('content')
-<p>You are logged in!</p>
-<hr>
-<p><b>Atenção</b></p>
-<p>A edição pode influenciar em todos os cadastros, porém o processo pode ser reversível</p>
-<style>
+
+
   .uper {
     margin-top: 40px;
   }

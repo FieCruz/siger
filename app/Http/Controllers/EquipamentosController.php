@@ -27,9 +27,7 @@ class EquipamentosController extends Controller
     public function create()
     {
         $campus =  Campus::all();
-
-        return view('equipamentos.create')
-        ->withCampus($campus);
+        return view('equipamentos.create')->withCampus($campus);
     }
 
     /**

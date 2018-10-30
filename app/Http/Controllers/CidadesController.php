@@ -100,7 +100,7 @@ class CidadesController extends Controller
             'estado'    => 'required'
         ]);
 
-        $cidade->cidade = $request->get('cidade');
+        $cidade->cidade    = $request->get('cidade');
         $cidade->idestados = $request->get('estado');
         $cidade->save();
         return redirect('/cidades')->with('success', 'Cidade alterada com sucesso');

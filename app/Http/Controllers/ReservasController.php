@@ -15,8 +15,10 @@ class ReservasController extends Controller
      */
     public function index()
     {
-        //
+        $reservas = Reservas::all();
+        return view('reservas.index', compact('reservas'));
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -39,14 +41,16 @@ class ReservasController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'solicitante'=>'required',
-            'dtagendamento'=> 'required|date',
-            'fkequipamentos' => 'required|integer'
+            'solicitante'       =>'required',
+            'horario'           =>'required',
+            'dtagendamento'     => 'required|date',
+            'fkequipamentos'    => 'required|integer|unique:reservas'
           ]);
           $reservas = new Reservas([
-            'solicitante' => $request->get('solicitante'),
-            'dtagendamento'=> $request->get('dtagendamento'),
-            'fkequipamentos'=> $request->get('fkequipamentos')
+            'solicitante'    =>$request->get('solicitante'),
+            'horario'        =>$request->get('horario'),
+            'dtagendamento'  =>$request->get('dtagendamento'),
+            'fkequipamentos' =>$request->get('fkequipamentos')
           ]);
           $reservas->save();
           return redirect('/reservas')->with('success', 'Reserva realizada com sucesso.');

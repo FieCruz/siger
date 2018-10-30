@@ -18,6 +18,7 @@ class CreateReservasTable extends Migration
             $table->integer ('fkequipamentos')->unsigned()->unique();
             $table->foreign('fkequipamentos')->references('id')->on('equipamentos');
             $table->string('solicitante');
+            $table->string('horario');
             $table->date('dtagendamento');
             $table->timestamps();
           

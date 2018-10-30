@@ -89,16 +89,16 @@ class EstadosController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nomeuf'=>'required',
-            'uf'=> 'required',
+            'nomeuf' =>'required',
+            'uf'     => 'required',
            
         ]
       
         );
     
-          $estados = Estados::find($id);
-          $estados->nomeuf = $request->get('nomeuf');
-          $estados->uf = $request->get('uf');
+          $estados              = Estados::find($id);
+          $estados->nomeuf      = $request->get('nomeuf');
+          $estados->uf          = $request->get('uf');
           
           $estados->save();
     

@@ -7,8 +7,7 @@
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
-    <hr>
+  
 
     <style>
   .uper {
@@ -34,6 +33,11 @@
          <div class="form-group">
          <label for="solicitante">Solicitante: </label> 
               <input type="text" class="form-control" name="solicitante" value="{{auth()->user()->name}}" readonly >
+         </div>
+         
+          <div class="form-group">
+         <label for="horario">Horário:</label> 
+              <input type="text" class="form-control" name="horario" >
          </div>
           <div class="form-group">
               @csrf

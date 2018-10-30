@@ -7,8 +7,7 @@
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
-    <hr>
+    
 
     <style>
   .uper {
@@ -29,7 +28,7 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td><b>Código do campus:</b></td>
+         
           <td><b>Descrição do Campus:</b></td>
           <td><b>Endereço do Campus:</b></td>
           <td><b>Telefone do Campus:</b></td>
@@ -41,7 +40,7 @@
     <tbody>
         @foreach($campus as $campus)
         <tr>
-            <td>{{$campus->id}}</td>
+            
             <td>{{$campus->descricao}}</td>
             <td>{{$campus->endereco}}</td>
             <td>{{$campus->telefone}}</td>

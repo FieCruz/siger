@@ -7,8 +7,7 @@
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
-   <hr>
+   
 <style>
   .uper {
     margin-top: 40px;
@@ -23,7 +22,7 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td><b>Código do equipamento:</b></td>
+          
           <td><b>Descrição/Marca:</b></td>
           <td><b>Modelo:</b></td>
           <td><b>Numero de série:</b></td>    
@@ -37,7 +36,7 @@
     <tbody>
         @foreach($equipamentos as $equipamentos)
         <tr>
-            <td>{{$equipamentos->id}}</td>
+            
 	          <td>{{$equipamentos->eqdescricao}}</td>
             <td>{{$equipamentos->marca}}</td>
             <td>{{$equipamentos->codidentificacao}}</td>
