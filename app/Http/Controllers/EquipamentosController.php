@@ -131,4 +131,7 @@ class EquipamentosController extends Controller
 
      return redirect('/equipamentos')->with('success', 'Equipamento excluido com sucesso');
     }
+
+    
+   
 }

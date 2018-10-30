@@ -23,8 +23,7 @@
     <thead>
         <tr>
          
-          <td><b>Cidade / Estado<b></td>
-              
+          <td><b>Cidade / Estado<b></td>  
           <td colspan="2"><b>Ações</b></td>
         </tr>
     </thead>

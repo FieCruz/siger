@@ -122,5 +122,5 @@ class ReservasController extends Controller
    
         return redirect('/reservas')->with('success', 'Reserva cancelada com sucesso');
     }
-    
+   
 }
