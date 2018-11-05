@@ -29,12 +29,12 @@
         @method('PATCH')
         @csrf
         <div class="form-group">
-          <label for="nomeuf">Nome da UF:</label>
-          <input type="text" class="form-control" name="nomeuf" value={{ $estados->nomeuf }} />
+          <label for="name">Nome da UF:</label>
+          <input type="text" class="form-control" name="name" value={{ $estados->name }} />
         </div>
         <div class="form-group">
-          <label for="uf">UF:</label>
-          <input type="text" class="form-control" name="uf" value={{ $estados->uf }} />
+          <label for="abbr">UF:</label>
+          <input type="text" class="form-control" name="abbr" value={{ $estados->abbr }} />
         </div>
         
         <button type="submit" class="btn btn-primary">Atualizar</button>

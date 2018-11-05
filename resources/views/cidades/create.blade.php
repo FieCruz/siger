@@ -31,16 +31,16 @@
       <form method="post" action="{{ route('cidades.store') }}">
           <div class="form-group">
               @csrf
-              <label for="cidade">Cidade:</label>
-              <input type="text" class="form-control" name="cidade"/>
+              <label for="name">Cidade:</label>
+              <input type="text" class="form-control" name="name"/>
           </div>
           <div class="form-group">
-           <label for="estado">Estado:</label>
+           <label for="state_id">Estado:</label>
           {!!
             Form::select(
-                'estado',
-                $estados->pluck('nomeuf','id'),
-                old('estado') ?? request()->get('estado'),
+                'state_id',
+                $estados->pluck('name','id'),
+                old('state_id') ?? request()->get('state_id'),
                 ['class' => 'form-control']
             )
         !!}

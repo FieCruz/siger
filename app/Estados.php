@@ -14,8 +14,8 @@ class Estados extends Model
      * @var array
      */
     protected $fillable = [
-        'uf',
-        'nomeuf',
+        'name',
+        'abbr',
     ];
     /**
      * @var string
@@ -28,7 +28,7 @@ class Estados extends Model
      */
     public function cidades()
     {
-        return $this->hasMany('App\Cidades', 'idestados', 'id');
+        return $this->hasMany('App\Cidades', 'state_id', 'id');
     }
     
 }

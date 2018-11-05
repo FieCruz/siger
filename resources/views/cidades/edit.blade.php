@@ -32,17 +32,17 @@
         @method('PATCH')
         @csrf
         <div class="form-group">
-          <label for="cidade">Cidade:</label>
-          <input type="text" class="form-control" name="cidade" value={{ $cidade->cidade }} />
+          <label for="name">Cidade:</label>
+          <input type="text" class="form-control" name="name" value={{ $cidade->name }} />
         </div>
         <div class="form-group">
-          <label for="estados">Estados :</label>
+          <label for="state_id">Estados :</label>
          {!!
             
             Form::select(
-                'estado',
-                $estados->pluck('nomeuf','id'),
-                old('estado') ?? $cidade->estado->id,
+                'state_id',
+                $estados->pluck('name','id'),
+                old('state_id') ?? $cidade->estado->id,
                 ['class' => 'form-control']
             )
         !!}

@@ -15,10 +15,10 @@ class CreateCidadesTable extends Migration
     {
         Schema::create('cidades', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('state_id')->unsigned();
+            $table->foreign('state_id')->references('id')->on('estados');
+            $table->string('name', 64);
             $table->timestamps();
-            $table->string('cidade');
-            $table->integer('idestados')->unsigned();
-            $table->foreign('idestados')->references('id')->on('estados');
             $table->softDeletes();
         });
     }

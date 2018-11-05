@@ -31,7 +31,7 @@
         @foreach($cidades as $cidades)
         <tr>
             
-            <td>{{$cidades->cidade}} - {{ $cidades->estado->uf }}</td>
+            <td>{{$cidades->name}} - {{ $cidades->estado->abbr }}</td>
            
          <td><a href="{{ route('cidades.edit',$cidades->id)}}" class="btn btn-primary">Editar</a></td>
             <td>

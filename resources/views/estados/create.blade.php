@@ -30,12 +30,12 @@
       <form method="post" action="{{ route('estados.store') }}">
           <div class="form-group">
               @csrf
-              <label for="nomeuf">Nome da UF:</label>
-              <input type="text" class="form-control" name="nomeuf"/>
+              <label for="name">Nome da UF:</label>
+              <input type="text" class="form-control" name="name"/>
           </div>
           <div class="form-group">
-              <label for="UF">UF</label>
-              <input type="text" class="form-control" name="uf"/>
+              <label for="abbr">UF</label>
+              <input type="text" class="form-control" name="abbr"/>
               <br>
           </div>
           

@@ -39,16 +39,16 @@ class EstadosController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nomeuf'=>'required|unique:estados',
-            'uf'=> 'required|unique:estados',
+            'name'=>'required|unique:estados',
+            'abbr'=> 'required|unique:estados',
             
         ]
    
         
         );
           $estados = new Estados([
-            'nomeuf' => $request->get('nomeuf'),
-            'uf'=> $request->get('uf'),
+            'name' => $request->get('name'),
+            'abbr'=> $request->get('abbr'),
            
           ]);
           $estados->save();
@@ -89,16 +89,16 @@ class EstadosController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nomeuf' =>'required',
-            'uf'     => 'required',
+            'name'     =>'required',
+            'abbr'     => 'required',
            
         ]
       
         );
     
           $estados              = Estados::find($id);
-          $estados->nomeuf      = $request->get('nomeuf');
-          $estados->uf          = $request->get('uf');
+          $estados->nomeuf      = $request->get('name');
+          $estados->uf          = $request->get('abbr');
           
           $estados->save();
     

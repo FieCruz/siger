@@ -16,7 +16,7 @@ class Campus extends Model
 
       public function city()
     {
-        return $this->hasOne('App\Cidades', 'id', 'cidade');
+        return $this->hasOne('App\Cidades', 'id', 'name');
     }
 
     

@@ -46,9 +46,9 @@
              <label for="cidade">Estado :</label>
          {!!
                 Form::select(
-                    'estado',
-                    $estados->pluck('nomeuf','id'),
-                    old('estado') ?? request()->get('estado'),
+                    'state_id',
+                    $estados->pluck('name','id'),
+                    old('state_id') ?? request()->get('state_id'),
                     ['class' => 'form-control', 'placeholder' => 'Selecione']
                 )
             !!}

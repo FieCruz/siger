@@ -33,8 +33,8 @@
         @foreach($estados as $estados)
         <tr>
             
-            <td>{{$estados->nomeuf}}</td>
-            <td>{{$estados->uf}}</td>
+            <td>{{$estados->name}}</td>
+            <td>{{$estados->abbr}}</td>
             
             <td><a href="{{ route('estados.edit',$estados->id)}}" class="btn btn-primary">Editar</a></td>
             <td>

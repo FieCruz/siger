@@ -49,13 +49,13 @@ class CidadesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'cidade'    => 'required',
-            'estado'    => 'required'
+            'state_id'    => 'required',
+            'name'        => 'required',
         ]);
 
         Cidades::create([
-                'cidade'    => $request->get('cidade'),
-                'idestados' => $request->get('estado')
+                'name'    => $request->get('cidade'),
+                'state_id' => $request->get('estado')
             ]
         );
         
@@ -96,12 +96,12 @@ class CidadesController extends Controller
     public function update(Request $request, Cidades $cidade)
     {
         $request->validate([
-            'cidade'    => 'required',
-            'estado'    => 'required'
+            'state_id'    => 'required',
+            'name'        => 'required'
         ]);
 
-        $cidade->cidade    = $request->get('cidade');
-        $cidade->idestados = $request->get('estado');
+        $cidade->name    = $request->get('cidade');
+        $cidade->state_id = $request->get('estado');
         $cidade->save();
         return redirect('/cidades')->with('success', 'Cidade alterada com sucesso');
     }
@@ -125,7 +125,7 @@ class CidadesController extends Controller
      */
     public function porestado(Estados $estado){
         return response()->json(
-            $estado->cidades()->orderBy('cidade')->get(),
+            $estado->cidades()->orderBy('name')->get(),
             200
         );
     }
