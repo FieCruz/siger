@@ -1,0 +1,36 @@
+version: '2'
+
+services:
+  app:
+    image: ambientum/php:7.2-nginx
+    container_name: siger
+    volumes:
+      - ./:/var/www/app
+    labels:
+      - 'traefik.backend=siger-app'
+      - 'traefik.port=8080'
+      - 'traefik.frontend.rule=Host:siger.localdev'
+      - 'traefik.docker.network=dockerlocalhost_frontend'
+    links:
+      - mariadb
+    networks:
+      - backend
+      - frontend
+
+  mariadb:
+    image: mariadb:latest
+    container_name: siger-ai-mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=homestead
+      - MYSQL_USER=homestead
+      - MYSQL_PASSWORD=secret
+    networks:
+      - backend
+
+networks:
+  frontend:
+    external:
+      name: docker-localhost_frontend
+  backend:
+    driver: bridge
